@@ -17,6 +17,7 @@ This saves a new user to the database.
 **POST */users***
 
 *Request body*:
+
 ```
 {username: 'test', email: 'test@example.com', password: '123password'}
 ```
