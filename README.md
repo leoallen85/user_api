@@ -2,6 +2,12 @@
 
 This is a simple JSON API for creating/reading/deleting a user.
 
+To get the server running on a Mac/Linux PC you should be able to just clone this repository, and then from the parent directory run `bundle` to install all the required Gems. 
+
+To start the server run `rackup` which should then run the server on  http://localhost:9292.
+
+> If you have an issue with Ruby versions you may need to install [rvm](http://rvm.io/) or [rbenv](http://rbenv.org/) as this requires Ruby 2+ to work properly
+
 ## Creating a user
 
 This saves a new user to the database.
