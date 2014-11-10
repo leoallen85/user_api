@@ -2,11 +2,9 @@
 
 This is a simple JSON API for creating/reading/deleting a user.
 
-## Requests
+## Creating a user
 
-### Creating a user
-
-This saves a new user to the database
+This saves a new user to the database.
 
 **Required fields**:
 
@@ -14,42 +12,49 @@ This saves a new user to the database
 * *email* - A valid email address
 * *password* - There is no strict validation on passwords, any string is accepted
 
-#### Example
+### Example
 
-URI: **POST /users**
+**POST */users***
 
-```json
+*Request body*:
+```
 {username: 'test', email: 'test@example.com', password: '123password'}
 ```
 
-**Response**:
+*Response body*:
 
-```json
+```
 {id: 123, username: 'test', email: 'test@example.com'}
 ```
 
-### Reading a user's details
+## Reading a user's details
 
-This fetches an already saved user from the database
+This fetches an already saved user from the database.
 
-#### Example
+### Example
 
-URI: **GET /users/123**
+**GET */users/123***
 
-**Response**:
+*Response body*:
 
-```json
+```
 {id: 123, username: 'test', email: 'test@example.com'}
+```
 
-### Deleting a user
+## Deleting a user
 
 This deletes an already saved user from the database.
 
-> You will need to authenticate in order to do this. Please add to your HTTP request the header **Authorize** with the value of the secret API key
+> You will need to authenticate in order to do this. Please add to your HTTP request the header **Authorize** with the value of the secret API key.
 
-#### Example
+### Example
 
-URI: **DELETE /users/123**
-Request Header: **Authorize: 12345abc**
+**DELETE */users/123***
 
-In this instance if successful the server will respond only with a [204 code](http://httpstatus.es/204) to indicate that the user was successfully deleted
+*Request Header*:
+
+```
+Authorize: 12345abc
+```
+
+In this instance the server will respond with only a [204 status code](http://httpstatus.es/204) if the user was successfully deleted.
