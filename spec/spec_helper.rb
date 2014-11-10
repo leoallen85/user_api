@@ -18,12 +18,17 @@ ENV['RACK_ENV'] = 'test'
 
 require 'rspec'
 require 'rack/test'
+require 'dm-rspec'
+require 'json_spec'
 
 RSpec.configure do |config|
   # reset database before each example is run
   config.before(:each) { DataMapper.auto_migrate! }
 
   config.include Rack::Test::Methods
+  config.include DataMapper::Matchers
+  config.include JsonSpec::Helpers
+
 
   def app; Sinatra::Application end
 
