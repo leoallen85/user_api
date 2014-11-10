@@ -18,13 +18,13 @@ This saves a new user to the database
 
 URI: **POST /users**
 
-```json
+```
 {username: 'test', email: 'test@example.com', password: '123password'}
 ```
 
 **Response**:
 
-```json
+```
 {id: 123, username: 'test', email: 'test@example.com'}
 ```
 
@@ -38,8 +38,9 @@ URI: **GET /users/123**
 
 **Response**:
 
-```json
+```
 {id: 123, username: 'test', email: 'test@example.com'}
+```
 
 ### Deleting a user
 
