@@ -1,10 +1,9 @@
 RSpec.describe User do
 
-  it { should validate_presence_of    :username   }
-  it { should validate_presence_of    :email   }
+  it { should validate_presence_of :username   }
+  it { should validate_presence_of :password   }
+  it { should validate_presence_of :email   }
   it { should validate_format_of(:email ).with(:email_address)  }
-
-  it { should validate_presence_of    :password   }
 
   context "creating a user" do
 
@@ -22,7 +21,7 @@ RSpec.describe User do
       expect(user).to be_saved
     end
 
-    # We just want to make sure this is changing it to a something different
+    # We just want to make sure this is changing it to something different
     it "hashes the user password" do
       expect(user.password).not_to eql '123password'
     end
