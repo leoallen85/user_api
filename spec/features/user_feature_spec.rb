@@ -43,7 +43,7 @@ RSpec.describe "Users API" do
 
         let(:api_key) { '12345abc' }
 
-        it "deletes the user given a correct API key" do
+        it "deletes the user" do
           expect(last_response.status).to eq 204
           expect(User.get(user.id)).to be nil
         end
