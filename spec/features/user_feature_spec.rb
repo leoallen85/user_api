@@ -1,4 +1,4 @@
-RSpec.describe "users" do
+RSpec.describe "Users API" do
 
   let(:expected_body) do
     {
